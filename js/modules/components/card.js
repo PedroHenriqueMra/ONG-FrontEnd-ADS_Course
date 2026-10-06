@@ -15,7 +15,7 @@ export function cardTemplate({
 
         return `
             <article class="${colClass} project-card">
-                <img src="${imageSrc}" alt="${imageAlt}">
+                <img src="${imageSrc}" alt="${imageAlt}" loading="lazy">
                 <div class="project-info">
                     <h2>${title}</h2>
                     <p>${text}</p>
