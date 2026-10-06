@@ -4,10 +4,10 @@ import { renderProjetos } from "./templates/projetos.js";
 import { renderCadastro } from "./templates/cadastro.js";
 
 export function configureRoutes() {
-    registerRoute("/", renderHome);
-    registerRoute("/projetos", renderProjetos);
-    registerRoute("/cadastro", renderCadastro);
+    registerRoute("/", renderHome, "Início");
+    registerRoute("/projetos", renderProjetos, "Projetos");
+    registerRoute("/cadastro", renderCadastro, "Cadastre-se");
 
     // Rota de erro 404 volta para dominio/
-    registerNotFound(renderHome);
+    registerNotFound(renderHome, "Início");
 }

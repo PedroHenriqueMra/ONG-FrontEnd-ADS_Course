@@ -10,20 +10,20 @@ const projects = [
     {
         title: "Projeto 1",
         text: LOREM,
-        imageSrc: "../imagens/projetos/caes_desabrigados.jpeg",
-        imageAlt: "Imagem projeto 1",
+        imageSrc: "imagens/projetos/caes_desabrigados.jpeg",
+        imageAlt: "Cinco cães atrás da grade de um canil, alguns com as patas apoiadas nela",
     },
     {
         title: "Projeto 2",
         text: LOREM,
-        imageSrc: "../imagens/projetos/caes_desabrigados_2.jpg",
-        imageAlt: "Imagem projeto 2",
+        imageSrc: "imagens/projetos/caes_desabrigados_2.jpg",
+        imageAlt: "Vários cães de rua atrás de uma cerca de arame em um abrigo com baias numeradas",
     },
     {
         title: "Projeto 3",
         text: LOREM,
-        imageSrc: "../imagens/projetos/gatos_desabrigados.jpeg",
-        imageAlt: "Imagem projeto 3",
+        imageSrc: "imagens/projetos/gatos_desabrigados.jpeg",
+        imageAlt: "Gatinho rajado olhando para a câmera por entre as grades de uma gaiola",
     },
 ];
 
@@ -37,6 +37,8 @@ export function renderProjetos() {
             cardTemplate({
                 ...project,
                 variant: "project",
+                linkText: "Quero ajudar",
+                linkHref: "#/cadastro",
                 colClass: "ong-col-md-6 ong-col-lg-4",
             })
         )
@@ -63,7 +65,7 @@ export function renderProjetos() {
             "Doação de itens: contribuição com produtos, alimentos e roupas",
         ],
         ctaText: "Quero contribuir financeiramente",
-        ctaHref: "javascript:void(0)",
+        ctaHref: "mailto:minhaong@gmail.com?subject=Quero%20contribuir%20financeiramente",
         extraSectionClass: "donate-section",
     });
 

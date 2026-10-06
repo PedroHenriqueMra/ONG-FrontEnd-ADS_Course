@@ -23,7 +23,7 @@ export function renderHome() {
 
     const html = `
         <div class="hero">
-            <img src="../imagens/index/ong_animais_de_rua.jpeg" alt="Ong image">
+            <img src="imagens/index/ong_animais_de_rua.jpeg" alt="Grupo de cães resgatados olhando para a câmera, um deles em pé apoiado nas patas traseiras">
         </div>
         <section class="section">
             <div class="ong-grid">
