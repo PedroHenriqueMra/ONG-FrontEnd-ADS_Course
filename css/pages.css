@@ -43,6 +43,28 @@ input:focus-visible {
   border: 0;
 }
 
+.skip-link {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+  z-index: 100;
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-primary-dark);
+  color: var(--color-surface);
+  font-weight: 600;
+  border-radius: var(--radius);
+  transform: translateY(-200%);
+  --color-focus: var(--color-accent-light);
+}
+.skip-link:focus {
+  transform: translateY(0);
+  color: var(--color-surface);
+}
+
+#app:focus {
+  outline: none;
+}
+
 .site-header,
 .site-footer {
   --color-focus: var(--color-accent-light);

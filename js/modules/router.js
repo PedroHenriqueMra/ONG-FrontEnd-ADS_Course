@@ -3,13 +3,16 @@ import { setupPageTransiction } from "./features/transiction.js";
 const routes = new Map();
 let notFoundHandler = null;
 let outletElement = null;
+let isFirstRender = true;
 
-export function registerRoute(path, handler) {
-    routes.set(path, handler);
+const SITE_NAME = "Patas de Rua";
+
+export function registerRoute(path, handler, title) {
+    routes.set(path, { handler, title });
 }
 
-export function registerNotFound(handler) {
-    notFoundHandler = handler;
+export function registerNotFound(handler, title) {
+    notFoundHandler = { handler, title };
 }
 
 function getCurrentPath() {
@@ -37,16 +40,30 @@ function closeMobileMenuIfOpen() {
     }
 }
 
-function renderCurrentRoute() {
-    const path = getCurrentPath();
-    const handler = routes.get(path) || notFoundHandler;
+// Leitores de tela nao percebem a troca de conteudo de uma SPA,
+// entao o foco vai para o <main> (exceto no primeiro carregamento)
+function announceRoute(title) {
+    document.title = title ? `${title} | ${SITE_NAME}` : SITE_NAME;
 
-    if (!handler) {
-        outletElement.innerHTML = "<p>Página não encontrada.</p>";
+    if (isFirstRender) {
+        isFirstRender = false;
         return;
     }
 
-    const { html, afterRender } = handler();
+    outletElement.focus();
+}
+
+function renderCurrentRoute() {
+    const path = getCurrentPath();
+    const route = routes.get(path) || notFoundHandler;
+
+    if (!route) {
+        outletElement.innerHTML = "<p>Página não encontrada.</p>";
+        announceRoute("Página não encontrada");
+        return;
+    }
+
+    const { html, afterRender } = route.handler();
 
     outletElement.innerHTML = html;
     
@@ -58,6 +75,7 @@ function renderCurrentRoute() {
  
     updateActiveLink(path);
     closeMobileMenuIfOpen();
+    announceRoute(route.title);
 }
 
 export function initRouter(outlet) {
