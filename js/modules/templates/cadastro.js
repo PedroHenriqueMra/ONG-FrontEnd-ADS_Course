@@ -34,8 +34,8 @@ export function renderCadastro() {
                                 <input type="tel" name="number" id="form_number"
                                         required
                                         placeholder="(00) 00000-0000"
-                                        pattern="\\d{2}\\ \\d{4,5}-\\d{4}"
-                                        title="Digite o numero no formato 00000-0000">
+                                        pattern="\\(\\d{2}\\) \\d{4,5}-\\d{4}"
+                                        title="Digite o numero no formato (00) 00000-0000">
                                 <span class="field-error" id="form_number-error" aria-live="polite"></span>
                             </div>
                             <div>

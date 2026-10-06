@@ -4,7 +4,7 @@ import { getRegistrations, saveRegistration } from "./registrations.js";
 const FIELD_MESSAGES = {
     form_email: "Digite um e-mail válido.",
     form_password: "A senha deve ter de 8 a 12 números.",
-    form_number: "Formato esperado: 00 00000-0000.",
+    form_number: "Formato esperado: (00) 00000-0000.",
     form_cep: "Formato esperado: 00000-000.",
     form_cpf: "Formato esperado: 000.000.000-00.",
 };
