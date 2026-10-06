@@ -1,0 +1,82 @@
+@media (min-width: 480px) {
+    .field-row.two-up > div {
+        flex: 1 1 calc(50% - var(--space-4));
+    }
+    .field-row.two-up > div:last-child:nth-child(odd) {
+        flex-basis: 100%;
+    }
+
+    .ong-col-sm-6  { grid-column: span 6; }
+    .ong-col-sm-12 { grid-column: span 12; }
+
+    /* config menu hamburguer */
+
+    .header-inner {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: var(--space-3);
+        padding-block: var(--space-4);
+    }
+
+    .main-nav {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: var(--space-2);
+        padding-top: var(--space-3);
+    }
+    
+    .main-nav.is-open {
+        display: flex;
+    }
+}
+
+@media (min-width: 768px) {
+    .ong-col-md-3  { grid-column: span 3; }
+    .ong-col-md-4  { grid-column: span 4; }
+    .ong-col-md-6  { grid-column: span 6; }
+    .ong-col-md-8  { grid-column: span 8; }
+    .ong-col-md-12 { grid-column: span 12; }
+
+    /* desfaz config menu hamburguer */
+    .header-inner { flex-wrap: nowrap; }
+    
+    .nav-toggle { display: none; }
+    .main-nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+    }
+
+    /* toast de notificação: sai do topo e vai para o canto inferior esquerdo */
+    .snippet-toast {
+        top: auto;
+        bottom: var(--space-5);
+        left: var(--space-5);
+        transform: none;
+    }
+}
+
+@media (min-width: 1024px) {
+    .ong-col-lg-2  { grid-column: span 2; }
+    .ong-col-lg-3  { grid-column: span 3; }
+    .ong-col-lg-4  { grid-column: span 4; }
+    .ong-col-lg-5  { grid-column: span 5; }
+    .ong-col-lg-6  { grid-column: span 6; }
+    .ong-col-lg-7  { grid-column: span 7; }
+    .ong-col-lg-8  { grid-column: span 8; }
+    .ong-col-lg-12 { grid-column: span 12; }
+}
+
+@media (min-width: 1280px) {
+    :root { --container-max: 1240px; }
+
+    .ong-col-xl-2  { grid-column: span 2; }
+    .ong-col-xl-3  { grid-column: span 3; }
+    .ong-col-xl-4  { grid-column: span 4; }
+    .ong-col-xl-6  { grid-column: span 6; }
+    .ong-col-xl-12 { grid-column: span 12; }
+}
