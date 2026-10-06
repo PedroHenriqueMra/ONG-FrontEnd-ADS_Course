@@ -27,8 +27,13 @@ a:hover { color: var(--color-accent-2); }
 a:focus-visible,
 button:focus-visible,
 input:focus-visible {
-  outline: 3px solid var(--color-accent);
+  outline: 3px solid var(--color-focus);
   outline-offset: 2px;
+}
+
+.site-header,
+.site-footer {
+  --color-focus: var(--color-accent-light);
 }
 
 h1, h2, h3 {
@@ -132,8 +137,8 @@ ul, ol { padding-left: var(--space-5); }
 
 .main-nav a:hover,
 .main-nav a[aria-current="page"] {
-  color: var(--color-accent);
-  border-bottom-color: var(--color-accent);
+  color: var(--color-accent-light);
+  border-bottom-color: var(--color-accent-light);
 }
 
 .nav-toggle {
