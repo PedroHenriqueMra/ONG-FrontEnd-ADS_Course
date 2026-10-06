@@ -10,7 +10,9 @@
   --color-primary-dark: #1F3427;
   --color-accent: #D9A441;
   --color-accent-2: #A64B3F;
+  --color-accent-light: #E8BE6A;
   --color-border: #E4DCC8;
+  --color-focus: var(--color-accent-2);
 
   --font-heading: 'Zilla Slab', Georgia, serif;
   --font-body: 'Nunito Sans', 'Segoe UI', sans-serif;

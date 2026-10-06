@@ -6,9 +6,13 @@ export function cardTemplate({
     imageSrc = "",
     imageAlt = "",
     linkText = "Saiba mais",
-    linkHref = "javascript:void(0)",
+    linkHref = "",
 }) {
     if (variant === "project") {
+        const linkHtml = linkHref
+            ? `<p class="project-link"><a href="${linkHref}">${linkText}<span class="sr-only"> (${title})</span></a></p>`
+            : "";
+
         return `
             <article class="${colClass} project-card">
                 <img src="${imageSrc}" alt="${imageAlt}">
@@ -16,7 +20,7 @@ export function cardTemplate({
                     <h2>${title}</h2>
                     <p>${text}</p>
                 </div>
-                <p class="project-link"><a href="${linkHref}">${linkText}</a></p>
+                ${linkHtml}
             </article>
         `;
     }

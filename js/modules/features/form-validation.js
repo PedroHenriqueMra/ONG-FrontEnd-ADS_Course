@@ -15,8 +15,11 @@ function validateField(input) {
 
     if (input.validity.valid) {
         errorEl.textContent = "";
+        input.removeAttribute("aria-invalid");
         return true;
     }
+
+    input.setAttribute("aria-invalid", "true");
 
     if (input.validity.valueMissing) {
         errorEl.textContent = "Este campo é obrigatório.";
@@ -33,6 +36,7 @@ function clearAllErrors(fields) {
     fields.forEach((input) => {
         const errorEl = document.getElementById(input.id + "-error");
         if (errorEl) errorEl.textContent = "";
+        input.removeAttribute("aria-invalid");
     });
 }
 
