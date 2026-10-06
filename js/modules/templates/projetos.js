@@ -37,6 +37,8 @@ export function renderProjetos() {
             cardTemplate({
                 ...project,
                 variant: "project",
+                linkText: "Quero ajudar",
+                linkHref: "#/cadastro",
                 colClass: "ong-col-md-6 ong-col-lg-4",
             })
         )
@@ -63,7 +65,7 @@ export function renderProjetos() {
             "Doação de itens: contribuição com produtos, alimentos e roupas",
         ],
         ctaText: "Quero contribuir financeiramente",
-        ctaHref: "javascript:void(0)",
+        ctaHref: "mailto:minhaong@gmail.com?subject=Quero%20contribuir%20financeiramente",
         extraSectionClass: "donate-section",
     });
 
