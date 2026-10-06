@@ -11,19 +11,19 @@ const projects = [
         title: "Projeto 1",
         text: LOREM,
         imageSrc: "../imagens/projetos/caes_desabrigados.jpeg",
-        imageAlt: "Imagem projeto 1",
+        imageAlt: "Cinco cães atrás da grade de um canil, alguns com as patas apoiadas nela",
     },
     {
         title: "Projeto 2",
         text: LOREM,
         imageSrc: "../imagens/projetos/caes_desabrigados_2.jpg",
-        imageAlt: "Imagem projeto 2",
+        imageAlt: "Vários cães de rua atrás de uma cerca de arame em um abrigo com baias numeradas",
     },
     {
         title: "Projeto 3",
         text: LOREM,
         imageSrc: "../imagens/projetos/gatos_desabrigados.jpeg",
-        imageAlt: "Imagem projeto 3",
+        imageAlt: "Gatinho rajado olhando para a câmera por entre as grades de uma gaiola",
     },
 ];
 
