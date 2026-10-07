@@ -157,9 +157,16 @@ ul, ol { padding-left: var(--space-5); }
 }
 
 .main-nav {
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  gap: var(--space-2);
+  padding-top: var(--space-3);
+}
+    
+.main-nav.is-open {
     display: flex;
-    flex-direction: row;
-    gap: var(--space-5);
 }
 
 .main-nav a {
