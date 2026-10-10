@@ -1,5 +1,7 @@
 import { cardTemplate } from "../components/card.js";
 
+import heroImg from "../../../imagens/index/ong_animais_de_rua.jpeg";
+
 const LOREM =
     "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore obcaecati voluptates deleniti voluptatibus at temporibus, magnam nihil voluptas commodi deserunt adipisci repudiandae iusto rem dolore aliquam mollitia officia pariatur distinctio!";
 
@@ -23,7 +25,7 @@ export function renderHome() {
 
     const html = `
         <div class="hero">
-            <img src="imagens/index/ong_animais_de_rua.jpeg" alt="Grupo de cães resgatados olhando para a câmera, um deles em pé apoiado nas patas traseiras">
+            <img src="${heroImg}" alt="Grupo de cães resgatados olhando para a câmera, um deles em pé apoiado nas patas traseiras">
         </div>
         <section class="section">
             <div class="ong-grid">
