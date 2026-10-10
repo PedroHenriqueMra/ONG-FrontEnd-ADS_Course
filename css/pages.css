@@ -61,6 +61,10 @@ input:focus-visible {
   color: var(--color-skip-link-text);
 }
 
+#app {
+  /* reserva a altura da tela enquanto o JS desenha a página, evitando que o rodapé "pule" (CLS) */
+  min-height: 100vh;
+}
 #app:focus {
   outline: none;
 }
