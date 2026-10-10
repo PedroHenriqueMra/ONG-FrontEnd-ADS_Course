@@ -68,7 +68,7 @@
   --color-label: var(--color-ink-soft);
   --color-input-bg: var(--color-bg);
   --color-input-text: var(--color-ink);
-  --color-input-border: var(--color-border);
+  --color-input-border: #8C8270;
   --color-input-border-hover: var(--color-primary);
   --color-input-border-focus: var(--color-accent);
   --color-input-border-valid: var(--color-primary);
@@ -130,17 +130,12 @@
 
   --color-bg: #121212;
 
-  /* Contrastes conferidos no WebAIM Contrast Checker: texto >= 4.5:1,
-     bordas de campos e contorno de foco >= 3:1. */
-
-  /* Página */
   --color-page-bg: var(--color-bg);
   --color-text: #E8E4DA;
   --color-text-soft: #B8BFB9;
   --color-heading: #A8D5B5;
   --color-divider: #333333;
 
-  /* Links */
   --color-link: #8FCB9F;
   --color-link-hover: #F0A196;
 
