@@ -35,7 +35,9 @@ Site institucional de uma ONG fictícia de resgate e adoção de cães e gatos e
 │   ├── pages.css              # Estilos de layout e componentes
 │   ├── snippets.css           # Toasts de alerta
 │   └── mediaquries.css        # Ajustes responsivos
-├── imagens/
+├── scripts/
+│   └── otimizar-imagens.js    # Gera as versões WebP e JPEG otimizadas (npm run images)
+├── imagens/                   # Imagens originais e, em otimizadas/, as versões usadas no site
 └── js/
     ├── main.js                # Ponto de entrada
     └── modules/
@@ -67,6 +69,12 @@ Depois, acesse o endereço exibido no terminal (por padrão http://localhost:517
 ```bash
 npm run build      # gera a versão minificada na pasta dist/
 npm run preview    # serve a pasta dist/ para conferir a build
+```
+
+Para regenerar as imagens otimizadas depois de trocar uma imagem original:
+
+```bash
+npm run images     # converte para WebP em duas larguras e gera um JPEG de fallback
 ```
 
 A build junta os módulos JavaScript e as folhas de estilo em um arquivo de cada, minifica HTML, CSS e JS e adiciona um hash ao nome dos arquivos para controle de cache. O projeto não possui testes automatizados.
