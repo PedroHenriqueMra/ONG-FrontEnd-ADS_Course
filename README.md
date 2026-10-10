@@ -19,6 +19,7 @@ Site institucional de uma ONG fictícia de resgate e adoção de cães e gatos e
 - CSS3 (custom properties, Flexbox, Grid e media queries)
 - JavaScript (ES6+) com ES Modules, sem frameworks
 - [GSAP 3](https://gsap.com/) via CDN
+- [Vite](https://vite.dev/) para o servidor de desenvolvimento e a build de produção (minificação de HTML, CSS e JS)
 - Git e GitHub, com GitFlow
 - GitHub Pages para o deploy
 
@@ -26,6 +27,8 @@ Site institucional de uma ONG fictícia de resgate e adoção de cães e gatos e
 
 ```
 ├── index.html                 # Página única da SPA
+├── vite.config.js             # Configuração da build (Vite + minificação do HTML)
+├── package.json               # Dependências e scripts (dev, build, preview)
 ├── css/
 │   ├── index.css              # Importa as demais folhas de estilo
 │   ├── variables.css          # Cores, fontes, espaçamentos (design tokens)
@@ -48,15 +51,25 @@ Cada template retorna um objeto `{ html, afterRender }`: o roteador insere o HTM
 
 ## Como executar
 
-Por usar ES Modules, o projeto precisa ser servido por um servidor HTTP (abrir o `index.html` direto pelo navegador, via `file://`, bloqueia os módulos).
+Pré-requisito: [Node.js](https://nodejs.org/) 20 ou superior (já inclui o npm).
 
 ```bash
 git clone https://github.com/PedroHenriqueMra/ONG-FrontEnd-ADS_Course.git
 cd ONG-FrontEnd-ADS_Course
-python3 -m http.server 8000
+npm install        # instala o Vite e o minificador de HTML
+npm run dev        # servidor de desenvolvimento com recarga automática
 ```
 
-Depois, acesse http://localhost:8000. Também é possível usar a extensão Live Server do VS Code.
+Depois, acesse o endereço exibido no terminal (por padrão http://localhost:5173).
+
+### Build de produção
+
+```bash
+npm run build      # gera a versão minificada na pasta dist/
+npm run preview    # serve a pasta dist/ para conferir a build
+```
+
+A build junta os módulos JavaScript e as folhas de estilo em um arquivo de cada, minifica HTML, CSS e JS e adiciona um hash ao nome dos arquivos para controle de cache. O projeto não possui testes automatizados.
 
 ## Fluxo de trabalho (GitFlow)
 
