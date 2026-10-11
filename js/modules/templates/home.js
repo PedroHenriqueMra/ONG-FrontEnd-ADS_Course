@@ -1,5 +1,8 @@
 import { cardTemplate } from "../components/card.js";
 
+import { pictureTemplate } from "../components/picture.js";
+import { IMAGENS } from "../assets/imagens.js";
+
 const LOREM =
     "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore obcaecati voluptates deleniti voluptatibus at temporibus, magnam nihil voluptas commodi deserunt adipisci repudiandae iusto rem dolore aliquam mollitia officia pariatur distinctio!";
 
@@ -23,7 +26,13 @@ export function renderHome() {
 
     const html = `
         <div class="hero">
-            <img src="imagens/index/ong_animais_de_rua.jpeg" alt="Grupo de cães resgatados olhando para a câmera, um deles em pé apoiado nas patas traseiras">
+            ${pictureTemplate({
+                image: IMAGENS.hero,
+                alt: "Grupo de cães resgatados olhando para a câmera, um deles em pé apoiado nas patas traseiras",
+                sizes: "(min-width: 1280px) 1240px, 100vw",
+                loading: "eager",
+                fetchPriority: "high",
+            })}
         </div>
         <section class="section">
             <div class="ong-grid">

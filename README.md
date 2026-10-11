@@ -19,6 +19,7 @@ Site institucional de uma ONG fictícia de resgate e adoção de cães e gatos e
 - CSS3 (custom properties, Flexbox, Grid e media queries)
 - JavaScript (ES6+) com ES Modules, sem frameworks
 - [GSAP 3](https://gsap.com/) via CDN
+- [Vite](https://vite.dev/) para o servidor de desenvolvimento e a build de produção (minificação de HTML, CSS e JS)
 - Git e GitHub, com GitFlow
 - GitHub Pages para o deploy
 
@@ -26,13 +27,17 @@ Site institucional de uma ONG fictícia de resgate e adoção de cães e gatos e
 
 ```
 ├── index.html                 # Página única da SPA
+├── vite.config.js             # Configuração da build (Vite + minificação do HTML)
+├── package.json               # Dependências e scripts (dev, build, preview)
 ├── css/
 │   ├── index.css              # Importa as demais folhas de estilo
 │   ├── variables.css          # Cores, fontes, espaçamentos (design tokens)
 │   ├── pages.css              # Estilos de layout e componentes
 │   ├── snippets.css           # Toasts de alerta
 │   └── mediaquries.css        # Ajustes responsivos
-├── imagens/
+├── scripts/
+│   └── otimizar-imagens.js    # Gera as versões WebP e JPEG otimizadas (npm run images)
+├── imagens/                   # Imagens originais e, em otimizadas/, as versões usadas no site
 └── js/
     ├── main.js                # Ponto de entrada
     └── modules/
@@ -48,15 +53,31 @@ Cada template retorna um objeto `{ html, afterRender }`: o roteador insere o HTM
 
 ## Como executar
 
-Por usar ES Modules, o projeto precisa ser servido por um servidor HTTP (abrir o `index.html` direto pelo navegador, via `file://`, bloqueia os módulos).
+Pré-requisito: [Node.js](https://nodejs.org/) 20 ou superior (já inclui o npm).
 
 ```bash
 git clone https://github.com/PedroHenriqueMra/ONG-FrontEnd-ADS_Course.git
 cd ONG-FrontEnd-ADS_Course
-python3 -m http.server 8000
+npm install        # instala o Vite e o minificador de HTML
+npm run dev        # servidor de desenvolvimento com recarga automática
 ```
 
-Depois, acesse http://localhost:8000. Também é possível usar a extensão Live Server do VS Code.
+Depois, acesse o endereço exibido no terminal (por padrão http://localhost:5173).
+
+### Build de produção
+
+```bash
+npm run build      # gera a versão minificada na pasta dist/
+npm run preview    # serve a pasta dist/ para conferir a build
+```
+
+Para regenerar as imagens otimizadas depois de trocar uma imagem original:
+
+```bash
+npm run images     # converte para WebP em duas larguras e gera um JPEG de fallback
+```
+
+A build junta os módulos JavaScript e as folhas de estilo em um arquivo de cada, minifica HTML, CSS e JS e adiciona um hash ao nome dos arquivos para controle de cache. O projeto não possui testes automatizados.
 
 ## Fluxo de trabalho (GitFlow)
 
@@ -88,6 +109,12 @@ Exemplo: `fix(cadastro): corrige pattern e formato do campo de telefone`.
 - **v1.0.0:** estrutura inicial do projeto.
 - **v1.0.1:** correção da validação do campo de telefone.
 - **v1.1.0:** adequações de acessibilidade (WCAG 2.1 AA), estrutura para deploy e documentação.
+- **v1.1.1:** correção do menu hambúrguer em telas menores que 480px.
+- **v1.2.0:** tema escuro, build de produção com Vite, imagens em WebP responsivo e deploy automático no GitHub Pages.
+
+## Deploy
+
+O deploy é feito pelo GitHub Actions (`.github/workflows/deploy.yml`): a cada push na `main`, o workflow instala as dependências, executa `npm run build` e publica a pasta `dist/` no GitHub Pages.
 
 ## Autor
 
