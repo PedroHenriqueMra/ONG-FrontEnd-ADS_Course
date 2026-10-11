@@ -109,6 +109,12 @@ Exemplo: `fix(cadastro): corrige pattern e formato do campo de telefone`.
 - **v1.0.0:** estrutura inicial do projeto.
 - **v1.0.1:** correção da validação do campo de telefone.
 - **v1.1.0:** adequações de acessibilidade (WCAG 2.1 AA), estrutura para deploy e documentação.
+- **v1.1.1:** correção do menu hambúrguer em telas menores que 480px.
+- **v1.2.0:** tema escuro, build de produção com Vite, imagens em WebP responsivo e deploy automático no GitHub Pages.
+
+## Deploy
+
+O deploy é feito pelo GitHub Actions (`.github/workflows/deploy.yml`): a cada push na `main`, o workflow instala as dependências, executa `npm run build` e publica a pasta `dist/` no GitHub Pages.
 
 ## Autor
 
