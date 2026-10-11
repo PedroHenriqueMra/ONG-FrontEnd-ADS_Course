@@ -3,6 +3,10 @@ import { engageSectionTemplate } from "../components/engage-section.js";
 
 import { setupProjectCardHover } from "../features/card-hover.js";
 
+import caesImg from "../../../imagens/projetos/caes_desabrigados.jpeg";
+import caes2Img from "../../../imagens/projetos/caes_desabrigados_2.jpg";
+import gatosImg from "../../../imagens/projetos/gatos_desabrigados.jpeg";
+
 const LOREM =
     "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad velit optio, libero dolores provident facere voluptatum at! Vel, iste adipisci dignissimos, doloremque quam, enim officiis mollitia nam ullam maxime perspiciatis?";
 
@@ -10,19 +14,19 @@ const projects = [
     {
         title: "Projeto 1",
         text: LOREM,
-        imageSrc: "imagens/projetos/caes_desabrigados.jpeg",
+        imageSrc: caesImg,
         imageAlt: "Cinco cães atrás da grade de um canil, alguns com as patas apoiadas nela",
     },
     {
         title: "Projeto 2",
         text: LOREM,
-        imageSrc: "imagens/projetos/caes_desabrigados_2.jpg",
+        imageSrc: caes2Img,
         imageAlt: "Vários cães de rua atrás de uma cerca de arame em um abrigo com baias numeradas",
     },
     {
         title: "Projeto 3",
         text: LOREM,
-        imageSrc: "imagens/projetos/gatos_desabrigados.jpeg",
+        imageSrc: gatosImg,
         imageAlt: "Gatinho rajado olhando para a câmera por entre as grades de uma gaiola",
     },
 ];
