@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;600;700&family=Nunito+Sans:wght@400;600;700&display=swap');
 
 :root {
-
+  /* Default colors: */
   --color-bg: #FBF8F2;
   --color-surface: #FFFFFF;
   --color-ink: #1E2A22;
@@ -12,7 +12,85 @@
   --color-accent-2: #A64B3F;
   --color-accent-light: #E8BE6A;
   --color-border: #E4DCC8;
+
+  /* Página */
+  --color-page-bg: var(--color-bg);
+  --color-text: var(--color-ink);
+  --color-text-soft: var(--color-ink-soft);
+  --color-heading: var(--color-primary-dark);
+  --color-divider: var(--color-border);
+
+  /* Links */
+  --color-link: var(--color-primary);
+  --color-link-hover: var(--color-accent-2);
+
+  /* Foco (contorno do teclado) */
   --color-focus: var(--color-accent-2);
+  --color-focus-on-dark: var(--color-accent-light);
+
+  /* Link "Pular para o conteúdo" */
+  --color-skip-link-bg: var(--color-primary-dark);
+  --color-skip-link-text: var(--color-surface);
+
+  /* Cabeçalho e navegação */
+  --color-header-bg: var(--color-primary);
+  --color-header-title: var(--color-surface);
+  --color-nav-link: #EFE7D3;
+  --color-nav-link-active: var(--color-accent-light);
+  --color-nav-toggle: #FFFFFF;
+
+  /* Rodapé */
+  --color-footer-bg: var(--color-primary-dark);
+  --color-footer-text: #D9D2BC;
+  --color-footer-link: var(--color-accent);
+
+  /* Cards (apresentação e projetos) */
+  --color-card-bg: var(--color-surface);
+  --color-card-border: var(--color-border);
+  --color-card-title-accent: var(--color-accent);
+  --color-card-link: var(--color-primary);
+  --color-card-shadow: rgba(30, 42, 34, 0.3);
+
+  /* Botão que leva ao cadastro (voluntariado) */
+  --color-btn-signup-bg: var(--color-primary);
+  --color-btn-signup-bg-hover: var(--color-primary-dark);
+  --color-btn-signup-text: var(--color-surface);
+
+  /* Botão que leva ao pagamento (doações) */
+  --color-btn-donate-bg: var(--color-accent-2);
+  --color-btn-donate-bg-hover: #863A2E;
+  --color-btn-donate-text: var(--color-surface);
+
+  /* Formulário */
+  --color-form-bg: var(--color-surface);
+  --color-form-border: var(--color-border);
+  --color-legend: var(--color-primary-dark);
+  --color-label: var(--color-ink-soft);
+  --color-input-bg: var(--color-bg);
+  --color-input-text: var(--color-ink);
+  --color-input-border: #8C8270;
+  --color-input-border-hover: var(--color-primary);
+  --color-input-border-focus: var(--color-accent);
+  --color-input-border-valid: var(--color-primary);
+  --color-input-border-invalid: var(--color-accent-2);
+  --color-field-error: var(--color-accent-2);
+
+  /* Botão de envio do formulário */
+  --color-btn-submit-bg: var(--color-accent);
+  --color-btn-submit-bg-hover: #C7912F;
+  --color-btn-submit-bg-active: var(--color-primary-dark);
+  --color-btn-submit-text: var(--color-primary-dark);
+  --color-btn-submit-text-active: var(--color-surface);
+
+  /* Alerta (toast) */
+  --color-toast-bg: var(--color-surface);
+  --color-toast-text: var(--color-ink);
+  --color-toast-close: var(--color-ink-soft);
+  --color-toast-close-hover: var(--color-accent-2);
+  --color-toast-shadow: rgba(30, 42, 34, 0.18);
+  --color-toast-success: var(--color-primary);
+  --color-toast-error: var(--color-accent-2);
+  --color-toast-icon: var(--color-surface);
 
   --font-heading: 'Zilla Slab', Georgia, serif;
   --font-body: 'Nunito Sans', 'Segoe UI', sans-serif;
@@ -42,4 +120,90 @@
   --container-max: 1120px;
   --grid-gap: var(--space-5);
 
+}
+
+/*
+  Dark theme config
+*/
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-bg: #121212;
+
+  --color-page-bg: var(--color-bg);
+  --color-text: #E8E4DA;
+  --color-text-soft: #B8BFB9;
+  --color-heading: #A8D5B5;
+  --color-divider: #333333;
+
+  --color-link: #8FCB9F;
+  --color-link-hover: #F0A196;
+
+  /* Foco */
+  --color-focus: #E8BE6A;
+  --color-focus-on-dark: #E8BE6A;
+
+  /* Link "Pular para o conteúdo" */
+  --color-skip-link-bg: #1A2B20;
+  --color-skip-link-text: #F5F1E8;
+
+  /* Cabeçalho e navegação */
+  --color-header-bg: #1A2B20;
+  --color-header-title: #F5F1E8;
+  --color-nav-link: #E5DEC9;
+  --color-nav-link-active: #E8BE6A;
+  --color-nav-toggle: #F5F1E8;
+
+  /* Rodapé */
+  --color-footer-bg: #0B120E;
+  --color-footer-text: #D9D2BC;
+  --color-footer-link: #E8BE6A;
+
+  /* Cards */
+  --color-card-bg: #1E1E1E;
+  --color-card-border: #333333;
+  --color-card-title-accent: #D9A441;
+  --color-card-link: #8FCB9F;
+  --color-card-shadow: rgba(0, 0, 0, 0.6);
+
+  /* Botão que leva ao cadastro */
+  --color-btn-signup-bg: #8FCB9F;
+  --color-btn-signup-bg-hover: #A8D5B5;
+  --color-btn-signup-text: #121212;
+
+  /* Botão que leva ao pagamento */
+  --color-btn-donate-bg: #E8897C;
+  --color-btn-donate-bg-hover: #F0A196;
+  --color-btn-donate-text: #121212;
+
+  /* Formulário */
+  --color-form-bg: #1E1E1E;
+  --color-form-border: #333333;
+  --color-legend: #A8D5B5;
+  --color-label: #B8BFB9;
+  --color-input-bg: #121212;
+  --color-input-text: #E8E4DA;
+  --color-input-border: #7A7A7A;
+  --color-input-border-hover: #8FCB9F;
+  --color-input-border-focus: #E8BE6A;
+  --color-input-border-valid: #8FCB9F;
+  --color-input-border-invalid: #E8897C;
+  --color-field-error: #F0A196;
+
+  /* Botão de envio do formulário */
+  --color-btn-submit-bg: #D9A441;
+  --color-btn-submit-bg-hover: #E8BE6A;
+  --color-btn-submit-bg-active: #8FCB9F;
+  --color-btn-submit-text: #121212;
+  --color-btn-submit-text-active: #121212;
+
+  /* Alerta (toast) */
+  --color-toast-bg: #1E1E1E;
+  --color-toast-text: #E8E4DA;
+  --color-toast-close: #B8BFB9;
+  --color-toast-close-hover: #F0A196;
+  --color-toast-shadow: rgba(0, 0, 0, 0.6);
+  --color-toast-success: #8FCB9F;
+  --color-toast-error: #E8897C;
+  --color-toast-icon: #121212;
 }

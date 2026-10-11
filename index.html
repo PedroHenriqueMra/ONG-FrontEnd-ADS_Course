@@ -1,7 +1,15 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" data-theme="light">
 <head>
     <meta charset="UTF-8">
+    <script>
+        // Aplica o tema antes de desenhar a página, evitando o "piscar" do tema claro
+        try {
+            const saved = JSON.parse(localStorage.getItem("ong:tema"));
+            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            document.documentElement.dataset.theme = saved || (prefersDark ? "dark" : "light");
+        } catch {}
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Patas de Rua: ONG que resgata, cuida e encaminha para adoção cães e gatos em situação de rua.">
     <title>Patas de Rua</title>
@@ -20,6 +28,7 @@
                 <a href="#/projetos" data-route="/projetos">Projetos</a>
                 <a href="#/cadastro" data-route="/cadastro">Cadastre-se</a>
             </nav>
+            <button type="button" class="theme-toggle" id="toggle-theme" aria-pressed="false">Modo escuro</button>
         </div>
     </header>
     
